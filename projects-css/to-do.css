@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 .content.container {
-    margin-left: 180px;
     background: #03dfff;
     background: linear-gradient(139deg,#03ddffcb 0%,#ff0381b6 90%);
 }
