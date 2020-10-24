@@ -28,7 +28,7 @@
                         </a>
                         <div class="dropdown-menu">
                           <a class="dropdown-item" href="data-table.html">Data Entry</a>
-                          <a class="dropdown-item" href="to-do.html">Another action</a>
+                          <a class="dropdown-item" href="to-do.html">To-Do</a>
                           <a class="dropdown-item" href="dice.html">Dice Game</a>
                           <a class="dropdown-item" href="stopwatch.html">Stopwatch</a>
                         </div>
@@ -39,7 +39,98 @@
         </div>
     </nav>
 
-
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col">
+                <div class="carousel slide" id="teams" data-ride='carousel'>
+                    <div role='listbox' class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="card">
+                                <div class="card-body">
+                                    <dl class="row">
+                                        <dt class="col-12 col-sm-6"><img src="images/fastlane.jpeg" alt=""></dt>
+                                        <div class="col-12 col-sm-6 align-self-center">
+                                            <dt class="col-12 team-heading text-primary">Fastlane</dt>
+                                            <dt class="col-12 text-warning member-heading">Members</dt>
+                                            <dd class="text-secondary col-12 team-member">N. Tarun</dd>
+                                            <dd class="text-secondary col-12 team-member">N. Anoop</dd>
+                                            <dd class="text-secondary col-12 team-member">Ch. Abhilash</dd>
+                                            <dt class="col-12 text-info project-heading">Project</dt>
+                                            <dd class="col-12 text-secondary project-title">Data Entry</dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="card">
+                                <div class="card-body">
+                                    <dl class="row">
+                                        <dt class="col-12 col-sm-6"><img src="images/pixies.jpg" alt="Pixies"></dt>
+                                        <div class="col-12 col-sm-6 align-self-center">
+                                            <dt class="col-12 team-heading text-primary">Pixies</dt>
+                                            <dt class="col-12 text-warning member-heading">Members</dt>
+                                            <dd class="text-secondary col-12 team-member">Duggirala Glory</dd>
+                                            <dd class="text-secondary col-12 team-member">Chatakondu jahnavi</dd>
+                                            <dd class="text-secondary col-12 team-member">Badvath Akhila </dd>
+                                            <dd class="text-secondary col-12 team-member">Nalapu swathi</dd>
+                                            <dt class="col-12 text-info project-heading">Project</dt>
+                                            <dd class="col-12 text-secondary project-title">To-Do</dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="card">
+                                <div class="card-body">
+                                    <dl class="row">
+                                        <dt class="col-12 col-sm-6"><img src="images/dominators.png" alt="Dominators"></dt>
+                                        <div class="col-12 col-sm-6 align-self-center">
+                                            <dt class="col-12 team-heading text-primary">Dominators</dt>
+                                            <dt class="col-12 text-warning member-heading">Members</dt>
+                                            <dd class="text-secondary col-12 team-member">Kotala Sai Kiran</dd>
+                                            <dd class="text-secondary col-12 team-member">Nithin</dd>
+                                            <dd class="text-secondary col-12 team-member">Akansha</dd>
+                                            <dt class="col-12 text-info project-heading">Project</dt>
+                                            <dd class="col-12 text-secondary project-title">Dice Game</dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="card">
+                                <div class="card-body">
+                                    <dl class="row">
+                                        <dt class="col-12 col-sm-6"><img alt="Brainstormers" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRu9X0yC4Od0EwPYxxlu4lTZPaWHFPyDzvzxA&usqp=CAU"></dt>
+                                        <div class="col-12 col-sm-6 align-self-center">
+                                            <dt class="col-12 team-heading text-primary">Brainstormers</dt>
+                                            <dt class="col-12 text-warning member-heading">Members</dt>
+                                            <dd class="text-secondary col-12 team-member">Manasvini Abhigna</dd>
+                                            <dd class="text-secondary col-12 team-member">N.Suharsha</dd>
+                                            <dd class="text-secondary col-12 team-member">Tejasree</dd>
+                                            <dt class="col-12 text-info project-heading">Project</dt>
+                                            <dd class="col-12 text-secondary project-title">Data Entry</dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <ol class="carousel-indicators">
+                        <li data-target='#teams' data-slide-to='0' class="active"></li>
+                        <li data-target='#teams' data-slide-to='1'></li>
+                        <li data-target='#teams' data-slide-to='2'></li>
+                        <li data-target='#teams' data-slide-to='3'></li>
+                    </ol>
+                    <a class="carousel-control-prev" href="#teams" role="button" data-slide='prev'><span class="carousel-control-prev-icon"></span></a>
+                    <a class="carousel-control-next" href="#teams" role="button" data-slide="next"><span class="carousel-control-next-icon"></span></a>
+                    <button class="btn btn-sm btn-danger" id="teams-button"><span class="fa fa-pause"></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer class="mt-auto">
         <div class="container">
@@ -72,6 +163,7 @@
     <script src='jquery/dist/jquery.slim.min.js'></script>
     <script src='bootstrap/js/bootstrap.min.js'></script>
     <script src="js/scripts.js"></script>
+    <script src="js/play-pause.js"></script>
 
 </body>
 </html>

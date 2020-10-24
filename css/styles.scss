@@ -116,3 +116,65 @@ footer {
 .bordering {
     border-bottom: 2px ridge;
 }
+
+.carousel {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    position: relative;
+    background-color: white;
+    height: 520px;
+    .carousel-indicators li {
+        background-color: lightgrey ;
+        height: 7px;
+    }
+    .carousel-indicators li.active {
+        background-color: black !important;
+    }
+    .carousel-control-prev, .carousel-control-next {
+        color: darkgrey !important;
+        width: 20%;
+    }
+
+    .carousel-control-prev span:hover {
+        background-color: black !important;
+    }
+
+    #teams-button {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+    .card {
+        height: inherit;
+        border: none;
+        margin-top: 70px;
+        margin-bottom: 70px;
+        .card-body {
+            dt img {
+                margin-left: 20%;
+                width: 300px;
+                height: 300px;
+            }
+            dt.team-heading {
+                font-size: 3.3rem;
+                padding-bottom: 15px;
+            }
+            dt.member-heading {
+                font-size: 1.5rem;
+            }
+            dd.team-member {
+                margin-left: 20px;
+                font-size: 1.2rem;
+            }
+            dt.project-heading {
+                font-size: 1.5rem;
+                padding-bottom: 5px;
+            }
+            dd.project-title {
+                font-size: 1.2rem;
+                margin-left: 20px;
+            }
+        }
+    }
+}
