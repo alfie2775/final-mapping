@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Grandstander&family=Overpass&family=Turret+Road:wght@800&display=swap&family=Overpass:wght@300&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 body {
     font-family: 'Overpass', sans-serif;
     background-color: #fffbe6;
@@ -60,7 +55,7 @@ body {
         font-size: 2rem;
     }
     img {
-        width: 400px;
+        width: 100%;
         height: 50vh;
     }
 }
@@ -156,7 +151,6 @@ footer {
         margin-bottom: 70px;
         .card-body {
             dt img {
-                margin-left: 20%;
                 width: 300px;
                 height: 300px;
             }
@@ -179,6 +173,15 @@ footer {
                 font-size: 1.2rem;
                 margin-left: 20px;
             }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .card-body {
+        dt img {
+            width: 100%;
+            height: 100%;
         }
     }
 }
