@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Grandstander&family=Overpass&family=Turret+Road:wght@800&display=swap");
+body {
+  font-family: 'Overpass', sans-serif;
+  background-color: #fffbe6;
+}
+
+.heading {
+  font-family: 'Turret Road', cursive;
+  font-size: 4rem;
+}
+
+.heading-caption {
+  font-size: 1.25rem;
+}
+
+.navbar {
+  font-family: 'Grandstander', cursive;
+  background-color: #333333 !important;
+}
+
+.navbar .navbar-brand {
+  font-size: 1.8rem;
+  margin-right: 20px;
+}
+
+.navbar .navbar-brand img {
+  width: 120px;
+  height: 95px;
+}
+
+.navbar .navbar-nav .nav-item {
+  margin-right: 20px;
+}
+
+.navbar .navbar-nav .nav-item .nav-link {
+  font-size: 1.3rem;
+}
+
+.dropdown-item:hover:not(.active) {
+  background-color: darkgrey;
+  color: white;
+}
+
+.dropdown-item.active {
+  background-color: black;
+  color: white;
+}
+
+.jumbotron {
+  background-color: #86dcf0;
+  min-height: 50vh;
+}
+
+.jumbotron h2 {
+  font-size: 2rem;
+}
+
+.jumbotron img {
+  width: 400px;
+  height: 50vh;
+}
+
+footer {
+  background-color: #d6ffb3;
+  padding-top: 20px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.p .row {
+  min-height: 40vh;
+}
+
+.p .row div h3 {
+  font-size: 2rem;
+}
+
+.p .row div p {
+  font-size: 1.5rem;
+}
+
+.p1, .p2, .p3, .p4 {
+  opacity: 0;
+  -webkit-transform: translateY(60px);
+          transform: translateY(60px);
+  -webkit-transition: opacity 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+  transition: opacity 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+}
+
+.p1-a, .p2-a, .p3-a, .p4-a {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+.p-link {
+  font-size: 1.15rem;
+}
+
+.team-name {
+  color: red;
+  font-size: 1.15rem;
+}
+
+.bordering {
+  border-bottom: 2px ridge;
+}
+/*# sourceMappingURL=styles.css.map */
