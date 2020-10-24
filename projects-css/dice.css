@@ -55,15 +55,8 @@ button span {
     text-shadow: 5px 5px floralwhite;
     color: #ff4f30;
 }
-
 .modal-body {
     background: #9de884;
-}
-
-@media (max-width: 767px) {
-    .dice img {
-        height: 65%;
-    }
 }
 
 
