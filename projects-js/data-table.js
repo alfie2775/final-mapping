@@ -1,7 +1,7 @@
 var data_list = new Array();
 
 function delete_data() {
-    localStorage.clear();
+    localStorage.removeItem("db");
 }
 
 
