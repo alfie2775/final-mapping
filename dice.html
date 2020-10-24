@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="projects-css/dice.css">
     <link rel="stylesheet" href="css/styles.css">
 
-    <title>United Coders</title>
+    <title>United Coders - Dice Game</title>
 </head>
 <body>
     
@@ -43,82 +43,111 @@
 
     
     <div class="content">
-        <div class="page">
-            <button type="button" class="butn1" 
-            onClick="restart()"> 
-                Restart
-            </button>
-            <div id="part">
-            <h2 id="pa1">Player 1</h2>
-            <h2 id="pa2">Player 2</h2>
-            <input type="button" class="roll1" value="Roll" onclick="disable1()" onmousedown="score()">
-            <input type="button" class="roll2" value="Roll" onclick="disable2()">
-            <button type="button" class="butn" 
-            onClick="editNames()"> 
-                Edit Names 
-            </button> 
-            <section class="D-main">
-            <div id=cube>
-                <img class="face front" src="images/D-1.png" alt="1">
-                <img class="face back" src="images/D-2.png" alt="2">
-                <img class="face right" src="images/D-3.png" alt="3">
-                <img class="face left" src="images/D-4.png" alt="4">
-                <img class="face top" src="images/D-5.png" alt="5">
-                <img class="face bottom" src="images/D-6.png" alt="6">
-            </div>
-            </section>
-            <section class="D-main1">
-            <div id=cube1>
-            <img class="face1 front1" src="images/E-1.png" alt="1">
-            <img class="face1 back1" src="images/E-2.png" alt="2">
-            <img class="face1 right1" src="images/E-3.png" alt="3">
-            <img class="face1 left1" src="images/E-4.png" alt="4">
-            <img class="face1 top1" src="images/E-5.png" alt="5">
-            <img class="face1 bottom1" src="images/E-6.png" alt="6">
-            <!--<input type="button" class="btn" value="Click me">-->
-            </div>
-            </section>
-            </div>
-            </div>
-            <div id="score">
-            <div class="score1">
-                <p class="p1-name">Player 1</p> <p> Score: </p><p id=p1><b>0</b></p>
-            </div>
-            <div class="score2">
-            <p class="p2-name">Player 2</p> <p> Score: </p><p id=p2><b>0</b></p>
-            </div>
-            </div>
-                
-            <div id="myModal" class="modal">
-              <div class="modal-content">
-                <span class="close">&times;</span>
-                <p class="w-pa">Player 1 </p>
-                  <p class="won">WON!</p>
-                  <div id="won">
-                  <p>Score :</p>
-                  <p class="f-score">0</p>
-                    <div id="restart"></div>
-                    <span class="start" id="cool"><i class="fas fa-play-circle"></i></span>
-                      
-                  </div>
-              </div>
+        <div class="container game">
+            <div class="row">
+                <div class="col-4 ml-auto mr-auto" id="scorebox">
+                    <h4 class="text-center">Scores</h4>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <p class="text-center">
+                                <span class="player-1">Player 1</span> : <span id="player-1-score">0</span>
+                            </p>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            
+                    <p class="text-center">
+                        <span class="player-2">Player 2</span> : <span id="player-2-score">0</span>
+                    </p>
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-6 text-center">
+                    <p class="player-1">Player-2</p>
+                    <div class="dice" id=cube>
+                        <img class="face front" src="/project-assets/dice/images/D-1.png" alt="1">
+                        <img class="face back" src="/project-assets/dice/images/D-2.png" alt="2">
+                        <img class="face right" src="/project-assets/dice/images/D-3.png" alt="3">
+                        <img class="face left" src="/project-assets/dice/images/D-4.png" alt="4">
+                        <img class="face top" src="/project-assets/dice/images/D-5.png" alt="5">
+                        <img class="face bottom" src="/project-assets/dice/images/D-6.png" alt="6">
+                    </div>                       
+                </div>
+                <div class="col-6 text-center">
+                    <p class="player-2">Player 2</p>
+                    <div class="dice" id=cube1>
+                        <img class="face1 front1" src="/project-assets/dice/images/E-1.png" alt="1">
+                        <img class="face1 back1" src="/project-assets/dice/images/E-2.png" alt="2">
+                        <img class="face1 right1" src="/project-assets/dice/images/E-3.png" alt="3">
+                        <img class="face1 left1" src="/project-assets/dice/images/E-4.png" alt="4">
+                        <img class="face1 top1" src="/project-assets/dice/images/E-5.png" alt="5">
+                        <img class="face1 bottom1" src="/project-assets/dice/images/E-6.png" alt="6">
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12 text-center">
+                    <button class="btn btn-lg btn-info mr-2" onclick="disable1()" onmousedown="score()"><span>Roll</span></button>
+                    <button class="btn btn-lg btn-success mr-2" onClick="editNames()"><span>Edit Names</span></button>
+                    <button class="btn btn-lg btn-danger" onclick="disable2()"><span>Roll</span></button>
+                </div>
+            </div>
+            <div class="modal fade" role='dialog' id='resultboard'>
+                <div class="modal-dialog modal-lg" role="content">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <p id="player-won"></p>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <p id="result"></p>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <p id='nice'>Score <span id="result-score"></span></p>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button class="close" data-dismiss='modal'><span class="fa fa-play fa-lg"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-4 offset-4 offset-md-5">
+                    <button class="btn btn-secondary btn-lg" id='start' onClick="restart()">
+                        <span>RESTART</span>
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <footer class="mt-auto">
         <div class="container">
             <div class="row">
-                <div class="col-6">
-                    <h4>Projects:</h4>
+                <div class="col-6 col-md-9">
+                    <h4>Projects</h4>
                     <ul class="list-unstyled ml-4">
-                        <li><a href="data-table.html">Data Entry</a></li>
-                        <li><a href="to-do.html">To-Do List</a></li>
-                        <li><a href="dice.html">Dice Game</a></li>
-                        <li><a href="stopwatch.html">Stopwatch</a></li>
+                        <li><a class="p-link" href="data-table.html">Data Entry</a></li>
+                        <li><a class="p-link" href="to-do.html">To-Do List</a></li>
+                        <li><a class="p-link" href="dice.html">Dice Game</a></li>
+                        <li><a class="p-link" href="stopwatch.html">Stopwatch</a></li>
                     </ul>
                 </div>
-                <div class="col ml-auto align-self-center">
-                    <h3><a href="">Teams</a></h3>
+                <div class="col-6ml-auto align-self-center">
+                    <h4>Teams</h4>
+                    <ul class="list-unstyled ml-4">
+                        <li class="team-name">Fastlane</li>
+                        <li class="team-name">Pixies</li>
+                        <li class="team-name">Dominators</li>
+                        <li class="team-name">brainstormers</li>
+                    </ul>
                 </div>
             </div>
             <div class="row mt-4 justify-content-center">
@@ -127,9 +156,9 @@
         </div>
     </footer>
 
-    <script src="projects-js/dice.js"></script>
     <script src='jquery/dist/jquery.slim.min.js'></script>
     <script src='bootstrap/js/bootstrap.min.js'></script>
+    <script src="projects-js/dice.js"></script>
     <script src="js/scripts.js"></script>
 
 </body>

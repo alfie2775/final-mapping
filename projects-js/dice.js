@@ -1,17 +1,27 @@
 var count1=1;
 var a=0;
-b=0;
-player1 = prompt("Change Player1 name", "Player 1"); 
-player2 = prompt("Change player2 name", "Player 2"); 
-document.querySelector("h2#pa1").innerHTML = player1; 
-        document.querySelector("h2#pa2").innerHTML = player2; 
+var b=0;
+
+const getNameOfPlayer = (playerNo) => {
+  player = ''
+  player = prompt('Enter the name of '+playerNo, playerNo);
+  while(player == '' || player == null)
+    player = prompt('Enter a valid name for '+playerNo, playerNo);
+  return player
+}
+var player1 = getNameOfPlayer('Player 1');
+var player2 = getNameOfPlayer('Player 2');
+$('span.player-1').html(player1);
+$('p.player-1').html(player1);
+$('span.player-2').html(player2);
+$('p.player-2').html(player2);
 
 
 var crowd = new Audio();
-crowd.src="../Audio/crowd.mp3";
+crowd.src="project-assets/dice/audio/crowd.mp3";
 
 
-function disable1(){
+const disable1 = () => {
     if(count1<6){
         roll1();
         sound.play();
@@ -19,12 +29,12 @@ function disable1(){
         count1++;
     }
     else{
-        document.getElementsByClassName("roll1").disabled=true;
+        $(".roll1").prop('disabled', true);
     }
     
 }
 var count2=1;
-function disable2(){
+const disable2 = () => {
     if(count2<6){
         roll2();
         score();
@@ -33,49 +43,32 @@ function disable2(){
         count2++;
     }
     if(count1==6 && count2==6)
-        {
-            open();
-        }
+        open();
     else{
-        document.getElementsByClassName("roll2").disabled=true;
+        $(".roll2").prop('disabled', true);
     }
     
 }
-  function editNames() { 
-        player1 = prompt("Change Player1 name", "Player 1"); 
-        player2 = prompt("Change player2 name", "Player 2"); 
-        document.querySelector("p.p1-name").innerHTML 
-                                = player1;
-      document.querySelector("p.p2-name").innerHTML 
-                                = player2;
-        document.querySelector("h2#pa1").innerHTML = player1; 
-        document.querySelector("h2#pa2").innerHTML = player2; 
-    }
+  const editNames = () => { 
+    player1 = getNameOfPlayer('Player 1'); 
+    player2 = getNameOfPlayer('Player 2'); 
+    $("p.player-1").html(player1);
+    $("p.player-2").html(player2);
+    $("span.player-1").html(player1); 
+    $("span.player-2").html(player2); 
+}
 
+const cube = $('#cube');
+const cube1 = $('#cube1');
 
-
-
-
-
-
-
-
-
-
-
-
-
-var cube = document.getElementById('cube');
-var cube1 = document.getElementById('cube1');
-
-var min = 1;
-var max = 20;
+const min = 1;
+const max = 20;
 var sound = new Audio();
-sound.src="../Audio/roll.mp3";
-function Reset(){
+sound.src="project-assets/dice/audio/roll.mp3";
+const Reset = () => {
     sound.play();
-    cube.style.transform = 'rotateX('+0+'deg) rotateY('+0+'deg)';
-    cube1.style.transform = 'rotateX('+0+'deg) rotateY('+0+'deg)';
+    cube.css('transform', 'rotateX('+0+'deg) rotateY('+0+'deg)');
+    cube1.css('transform', 'rotateX('+0+'deg) rotateY('+0+'deg)');
 }
 
 
@@ -83,108 +76,92 @@ var rand1 = Math.round(Math.random()*5) + 1;
 var rand2 = Math.round(Math.random()*5) + 1;
 
 
-function roll1() {
+const roll1 = () => {
   var x = getRandom(max, min);
   var y = getRandom(max, min);
   rand1 = Math.round(Math.random()*5) + 1;
-cube.style.transform = 'rotateX('+0+'deg) rotateY('+360+'deg)';
+cube.css('transform', 'rotateX('+0+'deg) rotateY('+360+'deg)');
  a=a+rand1;
 if(rand1==1){
-  cube.style.transform = 'rotateX('+0+'deg) rotateY('+360+'deg)';
+  cube.css('transform', 'rotateX('+0+'deg) rotateY('+360+'deg)');
 }
 if(rand1==2){
-  cube.style.transform = 'rotateX('+360+'deg) rotateY('+-90+'deg)';
+  cube.css('transform', 'rotateX('+360+'deg) rotateY('+-90+'deg)');
 }
 if(rand1==3){
-  cube.style.transform = 'rotateX('+180+'deg) rotateY('+720+'deg)';
+  cube.css('transform', 'rotateX('+180+'deg) rotateY('+720+'deg)');
 }
 if(rand1==4){
-  cube.style.transform = 'rotateX('+720+'deg) rotateY('+90+'deg)';
+  cube.css('transform', 'rotateX('+720+'deg) rotateY('+90+'deg)');
 }
 if(rand1==5){
-  cube.style.transform = 'rotateX('+270+'deg) rotateY('+720+'deg)';
+  cube.css('transform', 'rotateX('+270+'deg) rotateY('+720+'deg)');
 }
 if(rand1==6){
-  cube.style.transform = 'rotateX('+90+'deg) rotateY('+720+'deg)';
+  cube.css('transform', 'rotateX('+90+'deg) rotateY('+720+'deg)');
 }
 }
-function roll2() {
-  var x = getRandom(max, min);
-  var y = getRandom(max, min);
-  rand2 = Math.round(Math.random()*5) + 1;
+const roll2 = () => {
+    const x = getRandom(max, min);
+    const y = getRandom(max, min);
+    rand2 = Math.round(Math.random()*5) + 1;
     b=rand2+b;
-if(rand2==1){
-  cube1.style.transform = 'rotateX('+0+'deg) rotateY('+360+'deg)';
+    if(rand2==1){
+    cube1.css('transform', 'rotateX('+0+'deg) rotateY('+360+'deg)');
+    }
+    if(rand2==2){
+    cube1.css('transform', 'rotateX('+360+'deg) rotateY('+-90+'deg)');
+    }
+    if(rand2==3){
+    cube1.css('transform', 'rotateX('+180+'deg) rotateY('+720+'deg)');
+    }
+    if(rand2==4){
+    cube1.css('transform', 'rotateX('+720+'deg) rotateY('+90+'deg)');
+    }
+    if(rand2==5){
+    cube1.css('transform', 'rotateX('+270+'deg) rotateY('+720+'deg)');
+    }
+    if(rand2==6){
+    cube1.css('transform', 'rotateX('+90+'deg) rotateY('+720+'deg)');
+    }
 }
-if(rand2==2){
-  cube1.style.transform = 'rotateX('+360+'deg) rotateY('+-90+'deg)';
-}
-if(rand2==3){
-  cube1.style.transform = 'rotateX('+180+'deg) rotateY('+720+'deg)';
-}
-if(rand2==4){
-  cube1.style.transform = 'rotateX('+720+'deg) rotateY('+90+'deg)';
-}
-if(rand2==5){
-  cube1.style.transform = 'rotateX('+270+'deg) rotateY('+720+'deg)';
-}
-if(rand2==6){
-  cube1.style.transform = 'rotateX('+90+'deg) rotateY('+720+'deg)';
-}
-}
-var sc= document.getElementById('score');
-function score(){
+var sc= document.getElementById('scorebox');
+const score = () => {
     sc.style.opacity=1;
 }
-function score_down(){
+const score_down = () => {
     sc.style.opacity=0;
 }
 
 
-var modal = document.getElementById("myModal");
+var modal = $('#resultboard');
 
-// Get the button that opens the modal
-var btn = document.getElementById("butn1");
-
-var replay = document.getElementsByClassName("start")[0];
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
- function open() {
+ const open = () => {
   crowd.play();
-  modal.style.display = "block";
+  modal.modal('toggle');
   if(a>b){
-        document.querySelector("p.w-pa").innerHTML = player1;
-      document.querySelector("p.f-score").innerHTML = a;
+    $("#player-won").html(player1);
+    $("#result-score").html(a);
+    $("#result").html('Won');
+
     }
     if(b>a){
-        document.querySelector("p.w-pa").innerHTML = player2;
-        document.querySelector("p.f-score").innerHTML = b;
+        $("#player-won").html(player2);
+        $("#result-score").html(b);
+        $("#result").html('Won');
     }
     if(a==b){
-        document.querySelector("p.won").innerHTML ="Draw";
-        document.querySelector("p.f-score").innerHTML = b;
+    $("#player-won").html('');
+    $("#result").html('Draw');
+    $("#result-score").html(b);
     }
 }
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-    crowd.pause();
-  }
-}
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-  crowd.pause();
-}
-replay.onclick = function() {
-  modal.style.display = "none";
+
+const restart = () => {
   a=0;
   b=0;
-  document.querySelector("p#p1").innerHTML = a;
-  document.querySelector("p#p2").innerHTML = b;
+  $("#player-1-score").html(a);
+  $("#player-2-score").html(b);
   Reset();
   rand1=0;
   rand2=0;
@@ -193,30 +170,14 @@ replay.onclick = function() {
   crowd.pause();
 }
 
-// When the user clicks anywhere outside of the modal, close it
-
-function restart() {
-  modal.style.display = "none";
-  a=0;
-  b=0;
-  document.querySelector("p#p1").innerHTML = a;
-  document.querySelector("p#p2").innerHTML = b;
-  Reset();
-  rand1=0;
-  rand2=0;
-  count1=0;
-  count2=0;
-  crowd.pause();
+const score1 = () => {
+    $("#player-1-score").html(a);
 }
 
-function score1(){
-    document.querySelector("p#p1").innerHTML = a;
+const score2 = () => {
+    $("#player-2-score").html(b);
 }
 
-function score2(){
-    document.querySelector("p#p2").innerHTML = b;
-}
-
-function getRandom(max, min) {
+const getRandom = (max, min) => {
   return (Math.floor(Math.random() * (max-min)) + min) * 90;
 }
