@@ -6,9 +6,10 @@
 
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="projects-css/to-do.css">
     <link rel="stylesheet" href="css/styles.css">
 
-    <title>United Coders</title>
+    <title>United Coders - To Do</title>
 </head>
 <body>
     
@@ -40,8 +41,23 @@
     </nav>
 
     
-    <div class="content">
-        <!-- Paste your code and adjust the styles -->
+    <div class="content mt-5">
+        <h2 >My To Do List</h2>
+        <button class="btn btn-lg" onclick="myFunction()" id="demo"><span class="mt-5">enter name</span></button>
+        <p id="demo"></p><br>
+        <div class="containerc">
+            <div class="addTask">
+                <input type="text" placeholder="ADD TASK" id="all" required>
+                <button class="btn btn-outline-dark ml-4 btn-lg" onclick="validateform()" id="allt">Add</button>
+            </div>
+            <ol class="notCompleted">
+                <h3>Not Completed</h3>
+            </ol>
+        
+            <ol class="Completed">
+                <h3>Completed</h3>
+            </ol>
+        </div>
     </div>
 
     <footer class="mt-auto">
@@ -69,6 +85,7 @@
     <script src='jquery/dist/jquery.slim.min.js'></script>
     <script src='bootstrap/js/bootstrap.min.js'></script>
     <script src="js/scripts.js"></script>
+    <script src="projects-js/to-do.js"></script>
 
 </body>
 </html>
