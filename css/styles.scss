@@ -122,7 +122,7 @@ footer {
     margin-bottom: 50px;
     position: relative;
     background-color: white;
-    height: 520px;
+    min-height: 520px;
     .carousel-indicators li {
         background-color: lightgrey ;
         height: 7px;
@@ -144,6 +144,10 @@ footer {
         right: 0;
         bottom: 0;
         z-index: 1;
+    }
+    .carousel-inner {
+        
+    min-height: 520px;
     }
     .card {
         height: inherit;
