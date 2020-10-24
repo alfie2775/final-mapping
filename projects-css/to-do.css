@@ -3,14 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
-.content {
-    margin-left: 100px;
-    margin-right: 100px;
+.content.container {
+    margin-left: 180px;
     background: #03dfff;
     background: linear-gradient(139deg,#03ddffcb 0%,#ff0381b6 90%);
 }
 .containerc{
-    position: relative;
     max-width: 800px;
     padding: 10px;
     margin: 50px auto;
@@ -88,13 +86,12 @@ li button{
     cursor: pointer;
 }
 #demo{
-  position: relative;
-  left: 43%;
-  text-transform: uppercase;
-  background-color: #a796f1cb ;
-  color: #e3e1e1;
-  font-size: 25px;
-  border:  2px #fff;
+    justify-content: center;
+    text-transform: uppercase;
+    background-color: #a796f1cb ;
+    color: #e3e1e1;
+    font-size: 25px;
+    border:  2px #fff;
 }
 
 #demo:hover {
