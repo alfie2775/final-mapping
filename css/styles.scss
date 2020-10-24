@@ -177,6 +177,18 @@ footer {
     }
 }
 
+@media screen and (max-width: 600px) {
+    .carousel {
+        min-height: 880px;
+        .carousel-inner {
+            min-height: 880px;
+            .team-heading {
+                margin-top: 27px;
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 991px) {
     .card-body {
         dt img {

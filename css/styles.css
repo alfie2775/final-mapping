@@ -184,6 +184,18 @@ footer {
   margin-left: 20px;
 }
 
+@media screen and (max-width: 600px) {
+  .carousel {
+    min-height: 880px;
+  }
+  .carousel .carousel-inner {
+    min-height: 880px;
+  }
+  .carousel .carousel-inner .team-heading {
+    margin-top: 27px;
+  }
+}
+
 @media screen and (max-width: 991px) {
   .card-body dt img {
     width: 100%;
